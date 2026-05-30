@@ -119,11 +119,12 @@ export function AppSidebar() {
         ))}
 
         <SidebarGroup>
+          <SidebarGroupLabel>System</SidebarGroupLabel>
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton
                 render={<Link href="/settings" />}
-                isActive={pathname === "/settings"}
+                isActive={pathname.startsWith("/settings")}
               >
                 <Settings className="h-4 w-4" />
                 <span>Settings</span>
