@@ -1,6 +1,11 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+let _resend: Resend | null = null;
+function getResend() {
+  if (!process.env.RESEND_API_KEY) return null;
+  if (!_resend) _resend = new Resend(process.env.RESEND_API_KEY);
+  return _resend;
+}
 
 const FROM = "NextERP <notifications@nexterp.app>";
 
@@ -17,7 +22,6 @@ function base(title: string, body: string) {
     .body { padding: 32px; color: #374151; line-height: 1.6; font-size: 15px; }
     .body h3 { margin-top: 0; color: #111827; font-size: 20px; }
     .badge { display: inline-block; background: #f0fdf4; color: #15803d; border: 1px solid #bbf7d0; border-radius: 6px; padding: 4px 10px; font-size: 13px; font-weight: 600; }
-    .badge.warn { background: #fef9c3; color: #854d0e; border-color: #fde047; }
     .badge.err { background: #fef2f2; color: #991b1b; border-color: #fca5a5; }
     .table { width: 100%; border-collapse: collapse; margin: 16px 0; }
     .table th { background: #f9fafb; text-align: left; padding: 8px 12px; font-size: 12px; color: #6b7280; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; border: 1px solid #e5e7eb; }
@@ -49,7 +53,9 @@ export async function sendWelcomeEmail({
   hireDate?: string;
   loginUrl?: string;
 }) {
-  return resend.emails.send({
+  const r = getResend();
+  if (!r) return;
+  return r.emails.send({
     from: FROM,
     to,
     subject: `Welcome to the team, ${name}! 🎉`,
@@ -74,8 +80,10 @@ export async function sendAnniversaryEmail({
   name: string;
   years: number;
 }) {
+  const r = getResend();
+  if (!r) return;
   const milestone = years === 1 ? "1 year" : `${years} years`;
-  return resend.emails.send({
+  return r.emails.send({
     from: FROM,
     to,
     subject: `Happy ${milestone} Anniversary, ${name}! 🎂`,
@@ -96,7 +104,9 @@ export async function sendBirthdayEmail({
   to: string;
   name: string;
 }) {
-  return resend.emails.send({
+  const r = getResend();
+  if (!r) return;
+  return r.emails.send({
     from: FROM,
     to,
     subject: `Happy Birthday, ${name}! 🎉`,
@@ -126,8 +136,10 @@ export async function sendLeaveDecisionEmail({
   days: number;
   leaveType?: string;
 }) {
+  const r = getResend();
+  if (!r) return;
   const approved = status === "approved";
-  return resend.emails.send({
+  return r.emails.send({
     from: FROM,
     to,
     subject: `Your leave request has been ${status}`,
@@ -144,11 +156,7 @@ export async function sendLeaveDecisionEmail({
           <td><span class="badge ${approved ? "" : "err"}">${status}</span></td>
         </tr>
       </table>
-      ${
-        approved
-          ? "<p>Enjoy your time off! Your manager and team have been notified.</p>"
-          : "<p>If you have questions about this decision, please speak with your manager or HR.</p>"
-      }`,
+      ${approved ? "<p>Enjoy your time off! Your manager and team have been notified.</p>" : "<p>If you have questions about this decision, please speak with your manager or HR.</p>"}`,
     ),
   });
 }
@@ -170,7 +178,9 @@ export async function sendPayslipEmail({
   deductions: number;
   netPay: number;
 }) {
-  return resend.emails.send({
+  const r = getResend();
+  if (!r) return;
+  return r.emails.send({
     from: FROM,
     to,
     subject: `Your payslip for ${periodStart} – ${periodEnd}`,
