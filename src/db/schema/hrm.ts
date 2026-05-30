@@ -165,3 +165,55 @@ export const leaveRequestsRelations = relations(leaveRequests, ({ one }) => ({
     references: [leaveTypes.id],
   }),
 }));
+
+export const payrollStatusEnum = pgEnum("payroll_status", [
+  "draft",
+  "processing",
+  "paid",
+  "cancelled",
+]);
+
+export const payrollRuns = pgTable("payroll_runs", {
+  id: serial("id").primaryKey(),
+  periodStart: date("period_start").notNull(),
+  periodEnd: date("period_end").notNull(),
+  status: payrollStatusEnum("status").default("draft"),
+  totalGross: numeric("total_gross", { precision: 15, scale: 2 }).default("0"),
+  totalDeductions: numeric("total_deductions", {
+    precision: 15,
+    scale: 2,
+  }).default("0"),
+  totalNet: numeric("total_net", { precision: 15, scale: 2 }).default("0"),
+  notes: text("notes"),
+  orgId: varchar("org_id", { length: 255 }).notNull(),
+  createdBy: varchar("created_by", { length: 255 }),
+  createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow(),
+});
+
+export const payslips = pgTable("payslips", {
+  id: serial("id").primaryKey(),
+  payrollRunId: integer("payroll_run_id").notNull(),
+  employeeId: integer("employee_id").notNull(),
+  employeeName: varchar("employee_name", { length: 255 }).notNull(),
+  grossPay: numeric("gross_pay", { precision: 15, scale: 2 }).notNull(),
+  deductions: numeric("deductions", { precision: 15, scale: 2 }).default("0"),
+  netPay: numeric("net_pay", { precision: 15, scale: 2 }).notNull(),
+  orgId: varchar("org_id", { length: 255 }).notNull(),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export const payrollRunsRelations = relations(payrollRuns, ({ many }) => ({
+  payslips: many(payslips),
+}));
+
+export const payslipsRelations = relations(payslips, ({ one }) => ({
+  payrollRun: one(payrollRuns, {
+    fields: [payslips.payrollRunId],
+    references: [payrollRuns.id],
+  }),
+  employee: one(employees, {
+    fields: [payslips.employeeId],
+    references: [employees.id],
+  }),
+}));

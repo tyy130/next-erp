@@ -6,6 +6,7 @@ import { employees, departments, leaveTypes, leaveRequests } from "@/db/schema";
 import { eq, and } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { sendWelcomeEmail, sendLeaveDecisionEmail } from "@/lib/email";
 
 function requireOrg(orgId: string | null | undefined): string {
   if (!orgId) throw new Error("No organization selected");
@@ -44,15 +45,19 @@ export async function createEmployee(fd: FormData) {
 
   const deptId = fd.get("departmentId");
   const desgId = fd.get("designationId");
+  const firstName = fd.get("firstName") as string;
+  const lastName = fd.get("lastName") as string;
+  const email = (fd.get("email") as string) || undefined;
+  const hireDate = (fd.get("hireDate") as string) || undefined;
 
   await db.insert(employees).values({
-    firstName: fd.get("firstName") as string,
-    lastName: fd.get("lastName") as string,
-    email: (fd.get("email") as string) || undefined,
+    firstName,
+    lastName,
+    email,
     phone: (fd.get("phone") as string) || undefined,
     departmentId: deptId ? Number(deptId) : undefined,
     designationId: desgId ? Number(desgId) : undefined,
-    hireDate: (fd.get("hireDate") as string) || undefined,
+    hireDate,
     salary: (fd.get("salary") as string) || undefined,
     payType: (fd.get("payType") as string as "hourly" | "salary") || "salary",
     status:
@@ -61,6 +66,17 @@ export async function createEmployee(fd: FormData) {
     userId: userId!,
     orgId: oid,
   });
+
+  // Send welcome email (fire-and-forget — don't block the redirect)
+  if (email) {
+    sendWelcomeEmail({
+      to: email,
+      name: `${firstName} ${lastName}`,
+      hireDate,
+      loginUrl:
+        process.env.NEXT_PUBLIC_APP_URL ?? "https://next-erp-six.vercel.app",
+    }).catch(() => {});
+  }
 
   revalidatePath("/hrm/employees");
   redirect("/hrm/employees");
@@ -160,9 +176,29 @@ export async function updateLeaveStatus(
 ) {
   const { userId, orgId } = await auth();
   const oid = requireOrg(orgId);
+
   await db
     .update(leaveRequests)
     .set({ status, approvedBy: userId!, approvedAt: new Date() })
     .where(and(eq(leaveRequests.id, id), eq(leaveRequests.orgId, oid)));
+
+  // Send notification to employee
+  const req = await db.query.leaveRequests.findFirst({
+    where: eq(leaveRequests.id, id),
+    with: { employee: true, leaveType: true },
+  });
+
+  if (req?.employee?.email) {
+    sendLeaveDecisionEmail({
+      to: req.employee.email,
+      name: `${req.employee.firstName} ${req.employee.lastName}`,
+      status,
+      startDate: req.startDate,
+      endDate: req.endDate,
+      days: req.days,
+      leaveType: req.leaveType?.name,
+    }).catch(() => {});
+  }
+
   revalidatePath("/hrm/leaves");
 }

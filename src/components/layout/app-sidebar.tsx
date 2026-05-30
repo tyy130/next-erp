@@ -16,6 +16,8 @@ import {
   BookOpen,
   BarChart3,
   Settings,
+  DollarSign,
+  FolderOpen,
 } from "lucide-react";
 import {
   Sidebar,
@@ -35,6 +37,7 @@ const nav = [
       { title: "Employees", href: "/hrm/employees", icon: Users },
       { title: "Departments", href: "/hrm/departments", icon: Building2 },
       { title: "Leave Management", href: "/hrm/leaves", icon: CalendarDays },
+      { title: "Payroll", href: "/hrm/payroll", icon: DollarSign },
     ],
   },
   {
@@ -44,6 +47,10 @@ const nav = [
       { title: "Companies", href: "/crm/companies", icon: Briefcase },
       { title: "Deals", href: "/crm/deals", icon: TrendingUp },
     ],
+  },
+  {
+    label: "Projects",
+    items: [{ title: "All Projects", href: "/projects", icon: FolderOpen }],
   },
   {
     label: "Accounting",

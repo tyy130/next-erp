@@ -203,6 +203,13 @@ export const journalDetailsRelations = relations(journalDetails, ({ one }) => ({
   }),
 }));
 
+export const paymentsRelations = relations(payments, ({ one }) => ({
+  invoice: one(invoices, {
+    fields: [payments.invoiceId],
+    references: [invoices.id],
+  }),
+}));
+
 export const ledgersRelations = relations(ledgers, ({ one }) => ({
   chart: one(chartOfAccounts, {
     fields: [ledgers.chartId],

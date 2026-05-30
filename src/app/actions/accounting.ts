@@ -100,6 +100,16 @@ export async function deleteInvoice(id: number) {
   revalidatePath("/accounting/invoices");
 }
 
+export async function recordPaymentForm(fd: FormData) {
+  return recordPayment({
+    invoiceId: Number(fd.get("invoiceId")),
+    amount: fd.get("amount") as string,
+    paymentDate: fd.get("paymentDate") as string,
+    method: (fd.get("method") as string) || undefined,
+    reference: (fd.get("reference") as string) || undefined,
+  });
+}
+
 export async function recordPayment(data: {
   invoiceId: number;
   amount: string;

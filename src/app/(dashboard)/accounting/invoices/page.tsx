@@ -76,7 +76,12 @@ export default async function InvoicesPage() {
             {rows.map((inv) => (
               <TableRow key={inv.id}>
                 <TableCell className="font-mono font-medium">
-                  {inv.invoiceNumber}
+                  <a
+                    href={`/accounting/invoices/${inv.id}`}
+                    className="hover:underline"
+                  >
+                    {inv.invoiceNumber}
+                  </a>
                 </TableCell>
                 <TableCell>{inv.contactName ?? "—"}</TableCell>
                 <TableCell>{inv.trnDate}</TableCell>
