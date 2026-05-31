@@ -4,20 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
-  Users,
-  Building2,
-  CalendarDays,
-  LayoutDashboard,
-  Briefcase,
-  Contact,
-  TrendingUp,
-  Receipt,
-  CreditCard,
-  BookOpen,
-  BarChart3,
-  Settings,
-  DollarSign,
-  FolderOpen,
+  Users, Building2, CalendarDays, LayoutDashboard, Briefcase,
+  Contact, TrendingUp, Receipt, CreditCard, BookOpen, BarChart3,
+  Settings, DollarSign, FolderOpen, Bot,
 } from "lucide-react";
 import {
   Sidebar,
@@ -51,6 +40,10 @@ const nav = [
   {
     label: "Products",
     items: [{ title: "All Products", href: "/projects", icon: FolderOpen }],
+  },
+  {
+    label: "AI Agent",
+    items: [{ title: "Agent Operations", href: "/agents", icon: Bot }],
   },
   {
     label: "Accounting",

@@ -4,3 +4,4 @@ export * from "./accounting";
 export * from "./projects";
 export * from "./email-templates";
 export * from "./organization";
+export * from "./agents";

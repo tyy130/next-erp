@@ -211,7 +211,7 @@ Contributions are welcome! Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for 
 
 ## License
 
-[MIT](./LICENSE) © 2025 NextERP
+[MIT](./LICENSE) © 2026 NextERP
 
 ---
 
