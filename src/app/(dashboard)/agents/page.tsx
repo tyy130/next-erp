@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import { toast } from "sonner";
 import {
   Bot, Shield, Key, Activity, Clock, CheckCircle2, XCircle,
-  AlertCircle, Play, Pause, Settings, Zap, Eye, Copy, Plus, Loader2,
+  AlertCircle, Eye, Copy, Plus, Loader2, Moon, Sun, Globe, Download, Upload,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,6 +13,8 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Switch } from "@/components/ui/switch";
+import { useTheme } from "@/components/theme-provider";
+import { CsvImportExport } from "@/components/features";
 
 interface AgentAction {
   id: number;
@@ -130,6 +132,7 @@ export default function AgentsPage() {
           <TabsTrigger value="activity"><Activity className="h-4 w-4 mr-1" />Activity</TabsTrigger>
           <TabsTrigger value="guardrails"><Shield className="h-4 w-4 mr-1" />Guardrails</TabsTrigger>
           <TabsTrigger value="api-keys"><Key className="h-4 w-4 mr-1" />API Keys</TabsTrigger>
+          <TabsTrigger value="preferences"><Moon className="h-4 w-4 mr-1" />Preferences</TabsTrigger>
         </TabsList>
 
         {/* Activity Tab */}
@@ -246,6 +249,33 @@ export default function AgentsPage() {
                 <Button onClick={handleCreateApiKey} disabled={!newKeyName.trim()}>
                   <Plus className="h-3.5 w-3.5 mr-1" />Create Key
                 </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        {/* Preferences Tab */}
+        <TabsContent value="preferences" className="mt-4">
+          <Card>
+            <CardHeader><CardTitle className="text-lg">User Preferences</CardTitle></CardHeader>
+            <CardContent className="space-y-4">
+              <div>
+                <Label className="text-sm font-medium mb-2 block">Theme</Label>
+                <div className="flex items-center gap-2">
+                  {(["light", "dark", "system"] as const).map(t => (
+                    <button key={t} onClick={() => { useTheme().setTheme(t); toast.success(`Theme: ${t}`); }}
+                      className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md border text-sm ${useTheme().theme === t ? "bg-primary text-primary-foreground" : "hover:bg-muted"}`}>
+                      {t === "light" && <Sun className="h-3.5 w-3.5" />}
+                      {t === "dark" && <Moon className="h-3.5 w-3.5" />}
+                      {t === "system" && <Globe className="h-3.5 w-3.5" />}
+                      {t.charAt(0).toUpperCase() + t.slice(1)}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <Label className="text-sm font-medium mb-2 block">Data</Label>
+                <CsvImportExport orgId="current" resourceType="contacts" />
               </div>
             </CardContent>
           </Card>

@@ -6,17 +6,11 @@ import { usePathname } from "next/navigation";
 import {
   Users, Building2, CalendarDays, LayoutDashboard, Briefcase,
   Contact, TrendingUp, Receipt, CreditCard, BookOpen, BarChart3,
-  Settings, DollarSign, FolderOpen, Bot,
+  Settings, DollarSign, FolderOpen, Bot, Clock, Webhook,
 } from "lucide-react";
 import {
-  Sidebar,
-  SidebarContent,
-  SidebarGroup,
-  SidebarGroupLabel,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarHeader,
+  Sidebar, SidebarContent, SidebarGroup, SidebarGroupLabel,
+  SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarHeader,
 } from "@/components/ui/sidebar";
 
 const nav = [
@@ -42,20 +36,20 @@ const nav = [
     items: [{ title: "All Products", href: "/projects", icon: FolderOpen }],
   },
   {
-    label: "AI Agent",
-    items: [{ title: "Agent Operations", href: "/agents", icon: Bot }],
-  },
-  {
     label: "Accounting",
     items: [
       { title: "Invoices", href: "/accounting/invoices", icon: Receipt },
       { title: "Expenses", href: "/accounting/expenses", icon: CreditCard },
-      {
-        title: "Chart of Accounts",
-        href: "/accounting/accounts",
-        icon: BookOpen,
-      },
+      { title: "Chart of Accounts", href: "/accounting/accounts", icon: BookOpen },
       { title: "Reports", href: "/accounting/reports", icon: BarChart3 },
+    ],
+  },
+  {
+    label: "Operations",
+    items: [
+      { title: "Time Tracking", href: "/operations/time", icon: Clock },
+      { title: "Agent & API", href: "/agents", icon: Bot },
+      { title: "Webhooks", href: "/operations/webhooks", icon: Webhook },
     ],
   },
 ];
@@ -79,10 +73,7 @@ export function AppSidebar({ orgName }: { orgName?: string | null }) {
         <SidebarGroup>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton
-                render={<Link href="/dashboard" />}
-                isActive={pathname === "/dashboard"}
-              >
+              <SidebarMenuButton render={<Link href="/dashboard" />} isActive={pathname === "/dashboard"}>
                 <LayoutDashboard className="h-4 w-4" />
                 <span>Dashboard</span>
               </SidebarMenuButton>
@@ -96,10 +87,7 @@ export function AppSidebar({ orgName }: { orgName?: string | null }) {
             <SidebarMenu>
               {group.items.map((item) => (
                 <SidebarMenuItem key={item.href}>
-                  <SidebarMenuButton
-                    render={<Link href={item.href} />}
-                    isActive={pathname.startsWith(item.href)}
-                  >
+                  <SidebarMenuButton render={<Link href={item.href} />} isActive={pathname.startsWith(item.href)}>
                     <item.icon className="h-4 w-4" />
                     <span>{item.title}</span>
                   </SidebarMenuButton>
@@ -113,10 +101,7 @@ export function AppSidebar({ orgName }: { orgName?: string | null }) {
           <SidebarGroupLabel>System</SidebarGroupLabel>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton
-                render={<Link href="/settings" />}
-                isActive={pathname.startsWith("/settings")}
-              >
+              <SidebarMenuButton render={<Link href="/settings" />} isActive={pathname.startsWith("/settings")}>
                 <Settings className="h-4 w-4" />
                 <span>Settings</span>
               </SidebarMenuButton>

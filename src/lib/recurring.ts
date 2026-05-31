@@ -51,7 +51,7 @@ function calculateNextRun(from: string, frequency: string): string {
 
 export async function dispatchWebhook(orgId: string, event: string, data: any) {
   try {
-    const hooks = await db.execute(sql`SELECT url, secret FROM webhook_subscriptions WHERE org_id = ${orgId} AND is_active = true AND (events LIKE '%${event}%' OR events LIKE '%*%')`)) as unknown as any[];
+    const hooks = (await db.execute(sql`SELECT url, secret FROM webhook_subscriptions WHERE org_id = ${orgId} AND is_active = true AND (events LIKE '%${event}%' OR events LIKE '%*%')`)) as unknown as any[];
     for (const hook of hooks) {
       fetch(hook.url, {
         method: "POST",

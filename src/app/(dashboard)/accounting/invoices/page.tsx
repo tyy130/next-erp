@@ -14,7 +14,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { DeleteButton } from "@/components/ui/delete-button";
-import { Plus } from "lucide-react";
+import { Plus, Download, Upload } from "lucide-react";
 import { auth } from "@clerk/nextjs/server";
 
 const statusColor: Record<string, string> = {
@@ -42,10 +42,19 @@ export default async function InvoicesPage() {
             {rows.length} invoices · ${totalRevenue.toLocaleString()} collected
           </p>
         </div>
-        <ButtonLink href="/accounting/invoices/new">
-          <Plus className="mr-2 h-4 w-4" />
-          New Invoice
-        </ButtonLink>
+        <div className="flex items-center gap-2">
+          <form action="/api/csv/export" method="GET">
+            <input type="hidden" name="type" value="invoices" />
+            <Button type="submit" variant="outline" size="sm">
+              <Download className="mr-1.5 h-3.5 w-3.5" />
+              Export
+            </Button>
+          </form>
+          <ButtonLink href="/accounting/invoices/new">
+            <Plus className="mr-2 h-4 w-4" />
+            New Invoice
+          </ButtonLink>
+        </div>
       </div>
 
       <div className="rounded-md border">
