@@ -202,3 +202,48 @@ export async function updateLeaveStatus(
 
   revalidatePath("/hrm/leaves");
 }
+
+// --- Seed default departments ---
+
+const DEFAULT_DEPARTMENTS = [
+  { title: "Engineering", description: "Software development, infrastructure, and technical operations" },
+  { title: "Marketing", description: "Brand, content, digital marketing, and growth" },
+  { title: "Sales", description: "Revenue generation, client acquisition, and account management" },
+  { title: "Human Resources", description: "Recruitment, people operations, and employee experience" },
+  { title: "Finance", description: "Accounting, payroll, budgeting, and financial planning" },
+  { title: "Operations", description: "Business operations, logistics, and process improvement" },
+  { title: "Customer Support", description: "Customer success, support tickets, and client relations" },
+  { title: "Product", description: "Product management, strategy, and roadmap" },
+  { title: "Design", description: "UI/UX design, visual identity, and brand creative" },
+  { title: "Legal", description: "Contracts, compliance, and legal affairs" },
+  { title: "Executive", description: "C-suite, board, and strategic leadership" },
+  { title: "Research & Development", description: "R&D, innovation, and experimental projects" },
+];
+
+export async function seedDefaultDepartments() {
+  const { orgId } = await auth();
+  const oid = requireOrg(orgId);
+
+  // Get existing departments to avoid duplicates
+  const existing = await db.query.departments.findMany({
+    where: eq(departments.orgId, oid),
+  });
+  const existingTitles = new Set(existing.map((d) => d.title.toLowerCase()));
+
+  const toInsert = DEFAULT_DEPARTMENTS.filter(
+    (d) => !existingTitles.has(d.title.toLowerCase())
+  );
+
+  if (toInsert.length > 0) {
+    await db.insert(departments).values(
+      toInsert.map((d) => ({
+        title: d.title,
+        description: d.description,
+        orgId: oid,
+      }))
+    );
+  }
+
+  revalidatePath("/hrm/departments");
+  return { added: toInsert.length, skipped: DEFAULT_DEPARTMENTS.length - toInsert.length };
+}

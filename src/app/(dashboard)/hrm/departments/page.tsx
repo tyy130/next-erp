@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/table";
 import { DeleteButton } from "@/components/ui/delete-button";
 import { auth } from "@clerk/nextjs/server";
+import { SeedDepartmentsButton } from "@/components/hrm/seed-departments-button";
 
 export default async function DepartmentsPage() {
   const { orgId } = await auth();
@@ -23,7 +24,10 @@ export default async function DepartmentsPage() {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold">Departments</h1>
+      <div className="flex items-center justify-between">
+        <h1 className="text-2xl font-bold">Departments</h1>
+        <SeedDepartmentsButton existingCount={rows.length} />
+      </div>
 
       <form
         action={createDepartment}
@@ -67,7 +71,7 @@ export default async function DepartmentsPage() {
                   colSpan={3}
                   className="py-8 text-center text-muted-foreground"
                 >
-                  No departments yet.
+                  No departments yet. Click &ldquo;Add Default Departments&rdquo; to get started quickly.
                 </TableCell>
               </TableRow>
             )}
