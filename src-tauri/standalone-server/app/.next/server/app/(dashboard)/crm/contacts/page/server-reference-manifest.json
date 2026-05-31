@@ -1,0 +1,185 @@
+{
+  "node": {
+    "0090328087c916ab2be571625d51d3679cd4cddbcc": {
+      "workers": {
+        "app/(dashboard)/crm/contacts/page": {
+          "moduleId": 69587,
+          "async": false,
+          "exportedName": "invalidateCacheAction",
+          "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js"
+        }
+      },
+      "exportedName": "invalidateCacheAction",
+      "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js"
+    },
+    "002734026245ea1510028d6f5fd60c57081755df3a": {
+      "workers": {
+        "app/(dashboard)/crm/contacts/page": {
+          "moduleId": 69587,
+          "async": false,
+          "exportedName": "createOrReadKeylessAction",
+          "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+        }
+      },
+      "exportedName": "createOrReadKeylessAction",
+      "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+    },
+    "0011333cd193bdcd6b947e921c8b648bf97bf75624": {
+      "workers": {
+        "app/(dashboard)/crm/contacts/page": {
+          "moduleId": 69587,
+          "async": false,
+          "exportedName": "deleteKeylessAction",
+          "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+        }
+      },
+      "exportedName": "deleteKeylessAction",
+      "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+    },
+    "4067ecc7e368b217660b1eb7fbe205e8fe440a3ad5": {
+      "workers": {
+        "app/(dashboard)/crm/contacts/page": {
+          "moduleId": 69587,
+          "async": false,
+          "exportedName": "syncKeylessConfigAction",
+          "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+        }
+      },
+      "exportedName": "syncKeylessConfigAction",
+      "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+    },
+    "001c884dae1aea7abe80f41df1428a73a7ad1247ce": {
+      "workers": {
+        "app/(dashboard)/crm/contacts/page": {
+          "moduleId": 69587,
+          "async": false,
+          "exportedName": "getContacts",
+          "filename": "Dev/next-erp/src/app/actions/crm.ts"
+        }
+      },
+      "exportedName": "getContacts",
+      "filename": "Dev/next-erp/src/app/actions/crm.ts"
+    },
+    "0051b81fc7448f2cde7f1c600a0e2c308267f2ddc4": {
+      "workers": {
+        "app/(dashboard)/crm/contacts/page": {
+          "moduleId": 69587,
+          "async": false,
+          "exportedName": "getCompanies",
+          "filename": "Dev/next-erp/src/app/actions/crm.ts"
+        }
+      },
+      "exportedName": "getCompanies",
+      "filename": "Dev/next-erp/src/app/actions/crm.ts"
+    },
+    "00f7de1d1d06e9959a6924095c2d33dcc6faad7394": {
+      "workers": {
+        "app/(dashboard)/crm/contacts/page": {
+          "moduleId": 69587,
+          "async": false,
+          "exportedName": "getDeals",
+          "filename": "Dev/next-erp/src/app/actions/crm.ts"
+        }
+      },
+      "exportedName": "getDeals",
+      "filename": "Dev/next-erp/src/app/actions/crm.ts"
+    },
+    "4007413de0a9c246b8eeaab45272a7998b95d4f604": {
+      "workers": {
+        "app/(dashboard)/crm/contacts/page": {
+          "moduleId": 69587,
+          "async": false,
+          "exportedName": "createContact",
+          "filename": "Dev/next-erp/src/app/actions/crm.ts"
+        }
+      },
+      "exportedName": "createContact",
+      "filename": "Dev/next-erp/src/app/actions/crm.ts"
+    },
+    "401ab0f620c7615e1a2ac6fb52746f61154d8e169b": {
+      "workers": {
+        "app/(dashboard)/crm/contacts/page": {
+          "moduleId": 69587,
+          "async": false,
+          "exportedName": "createActivity",
+          "filename": "Dev/next-erp/src/app/actions/crm.ts"
+        }
+      },
+      "exportedName": "createActivity",
+      "filename": "Dev/next-erp/src/app/actions/crm.ts"
+    },
+    "402be9c4c1c5b7da1bf187e09260ed5d024534ddef": {
+      "workers": {
+        "app/(dashboard)/crm/contacts/page": {
+          "moduleId": 69587,
+          "async": false,
+          "exportedName": "createCompany",
+          "filename": "Dev/next-erp/src/app/actions/crm.ts"
+        }
+      },
+      "exportedName": "createCompany",
+      "filename": "Dev/next-erp/src/app/actions/crm.ts"
+    },
+    "403e80405d44a1c62cb8b182d8dbe05f13ef842a4c": {
+      "workers": {
+        "app/(dashboard)/crm/contacts/page": {
+          "moduleId": 69587,
+          "async": false,
+          "exportedName": "createDeal",
+          "filename": "Dev/next-erp/src/app/actions/crm.ts"
+        }
+      },
+      "exportedName": "createDeal",
+      "filename": "Dev/next-erp/src/app/actions/crm.ts"
+    },
+    "403f7475bb0d8f60f2f05f3e4f6ae34568f2feb3b0": {
+      "workers": {
+        "app/(dashboard)/crm/contacts/page": {
+          "moduleId": 69587,
+          "async": false,
+          "exportedName": "deleteContact",
+          "filename": "Dev/next-erp/src/app/actions/crm.ts"
+        }
+      },
+      "exportedName": "deleteContact",
+      "filename": "Dev/next-erp/src/app/actions/crm.ts"
+    },
+    "40cbb2b8229a4af6b4a397f74a67596097750b5231": {
+      "workers": {
+        "app/(dashboard)/crm/contacts/page": {
+          "moduleId": 69587,
+          "async": false,
+          "exportedName": "deleteCompany",
+          "filename": "Dev/next-erp/src/app/actions/crm.ts"
+        }
+      },
+      "exportedName": "deleteCompany",
+      "filename": "Dev/next-erp/src/app/actions/crm.ts"
+    },
+    "40f47ac12997339ac34c704745d9803a617a144951": {
+      "workers": {
+        "app/(dashboard)/crm/contacts/page": {
+          "moduleId": 69587,
+          "async": false,
+          "exportedName": "deleteDeal",
+          "filename": "Dev/next-erp/src/app/actions/crm.ts"
+        }
+      },
+      "exportedName": "deleteDeal",
+      "filename": "Dev/next-erp/src/app/actions/crm.ts"
+    },
+    "6089fc19d5d98e54e514f3c2e5bb52c8ae76d71743": {
+      "workers": {
+        "app/(dashboard)/crm/contacts/page": {
+          "moduleId": 69587,
+          "async": false,
+          "exportedName": "updateDealStage",
+          "filename": "Dev/next-erp/src/app/actions/crm.ts"
+        }
+      },
+      "exportedName": "updateDealStage",
+      "filename": "Dev/next-erp/src/app/actions/crm.ts"
+    }
+  },
+  "edge": {}
+}

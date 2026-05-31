@@ -1,0 +1,107 @@
+{
+  "app": {
+    "[project]/Dev/next-erp/src/app/(auth)/sign-in/[[...sign-in]]/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(auth)/sign-up/[[...sign-up]]/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/accounting/accounts/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/accounting/expenses/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/accounting/invoices/[id]/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/accounting/invoices/new/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/accounting/invoices/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/accounting/reports/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/crm/companies/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/crm/contacts/new/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/crm/contacts/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/crm/deals/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/dashboard/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/hrm/departments/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/hrm/employees/new/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/hrm/employees/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/hrm/leaves/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/hrm/payroll/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/projects/[id]/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/projects/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/settings/email-templates/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/settings/organization/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/(dashboard)/settings/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/_not-found/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ],
+    "[project]/Dev/next-erp/src/app/page": [
+      "static/media/fba5a26ea33df6a3-s.p.0eehd8tgys7nv.woff2",
+      "static/media/797e433ab948586e-s.p.09zddjkbdep5a.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

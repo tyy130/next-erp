@@ -1,16 +1,13 @@
 {
-  "$schema": "https://raw.githubusercontent.com/nicedoc/tauri/dev/.schema/config.schema.json",
   "productName": "NextERP",
   "version": "0.1.0",
   "identifier": "com.tactidev.next-erp",
   "build": {
-    "beforeBuildCommand": "npm run build",
+    "beforeBuildCommand": "npm run build && node scripts/copy-standalone.js",
     "beforeDevCommand": "npm run dev",
-    "devUrl": "http://localhost:3000",
-    "frontendDist": "../out"
+    "devUrl": "http://localhost:3000"
   },
   "app": {
-    "title": "NextERP",
     "windows": [
       {
         "title": "NextERP — Business Management Platform",

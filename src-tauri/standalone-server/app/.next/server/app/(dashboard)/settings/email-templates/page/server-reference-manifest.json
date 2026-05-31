@@ -1,0 +1,53 @@
+{
+  "node": {
+    "0090328087c916ab2be571625d51d3679cd4cddbcc": {
+      "workers": {
+        "app/(dashboard)/settings/email-templates/page": {
+          "moduleId": 50109,
+          "async": false,
+          "exportedName": "invalidateCacheAction",
+          "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js"
+        }
+      },
+      "exportedName": "invalidateCacheAction",
+      "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js"
+    },
+    "002734026245ea1510028d6f5fd60c57081755df3a": {
+      "workers": {
+        "app/(dashboard)/settings/email-templates/page": {
+          "moduleId": 50109,
+          "async": false,
+          "exportedName": "createOrReadKeylessAction",
+          "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+        }
+      },
+      "exportedName": "createOrReadKeylessAction",
+      "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+    },
+    "0011333cd193bdcd6b947e921c8b648bf97bf75624": {
+      "workers": {
+        "app/(dashboard)/settings/email-templates/page": {
+          "moduleId": 50109,
+          "async": false,
+          "exportedName": "deleteKeylessAction",
+          "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+        }
+      },
+      "exportedName": "deleteKeylessAction",
+      "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+    },
+    "4067ecc7e368b217660b1eb7fbe205e8fe440a3ad5": {
+      "workers": {
+        "app/(dashboard)/settings/email-templates/page": {
+          "moduleId": 50109,
+          "async": false,
+          "exportedName": "syncKeylessConfigAction",
+          "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+        }
+      },
+      "exportedName": "syncKeylessConfigAction",
+      "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+    }
+  },
+  "edge": {}
+}

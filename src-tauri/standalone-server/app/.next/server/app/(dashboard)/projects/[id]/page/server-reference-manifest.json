@@ -1,0 +1,137 @@
+{
+  "node": {
+    "0090328087c916ab2be571625d51d3679cd4cddbcc": {
+      "workers": {
+        "app/(dashboard)/projects/[id]/page": {
+          "moduleId": 57913,
+          "async": false,
+          "exportedName": "invalidateCacheAction",
+          "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js"
+        }
+      },
+      "exportedName": "invalidateCacheAction",
+      "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/server-actions.js"
+    },
+    "002734026245ea1510028d6f5fd60c57081755df3a": {
+      "workers": {
+        "app/(dashboard)/projects/[id]/page": {
+          "moduleId": 57913,
+          "async": false,
+          "exportedName": "createOrReadKeylessAction",
+          "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+        }
+      },
+      "exportedName": "createOrReadKeylessAction",
+      "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+    },
+    "0011333cd193bdcd6b947e921c8b648bf97bf75624": {
+      "workers": {
+        "app/(dashboard)/projects/[id]/page": {
+          "moduleId": 57913,
+          "async": false,
+          "exportedName": "deleteKeylessAction",
+          "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+        }
+      },
+      "exportedName": "deleteKeylessAction",
+      "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+    },
+    "4067ecc7e368b217660b1eb7fbe205e8fe440a3ad5": {
+      "workers": {
+        "app/(dashboard)/projects/[id]/page": {
+          "moduleId": 57913,
+          "async": false,
+          "exportedName": "syncKeylessConfigAction",
+          "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+        }
+      },
+      "exportedName": "syncKeylessConfigAction",
+      "filename": "Dev/next-erp/node_modules/@clerk/nextjs/dist/esm/app-router/keyless-actions.js"
+    },
+    "00303071cce7ec143a0297b0ab70c3d318b5ba973c": {
+      "workers": {
+        "app/(dashboard)/projects/[id]/page": {
+          "moduleId": 57913,
+          "async": false,
+          "exportedName": "getProjects",
+          "filename": "Dev/next-erp/src/app/actions/projects.ts"
+        }
+      },
+      "exportedName": "getProjects",
+      "filename": "Dev/next-erp/src/app/actions/projects.ts"
+    },
+    "4012c57c91af06300cd91366ece7638b20e2d2fb3b": {
+      "workers": {
+        "app/(dashboard)/projects/[id]/page": {
+          "moduleId": 57913,
+          "async": false,
+          "exportedName": "createTask",
+          "filename": "Dev/next-erp/src/app/actions/projects.ts"
+        }
+      },
+      "exportedName": "createTask",
+      "filename": "Dev/next-erp/src/app/actions/projects.ts"
+    },
+    "40b43468c82ff23e77aa12c4962a19ab730b4fcff7": {
+      "workers": {
+        "app/(dashboard)/projects/[id]/page": {
+          "moduleId": 57913,
+          "async": false,
+          "exportedName": "deleteProject",
+          "filename": "Dev/next-erp/src/app/actions/projects.ts"
+        }
+      },
+      "exportedName": "deleteProject",
+      "filename": "Dev/next-erp/src/app/actions/projects.ts"
+    },
+    "40eb12897b7e41b61104a807faae0088126e15dcef": {
+      "workers": {
+        "app/(dashboard)/projects/[id]/page": {
+          "moduleId": 57913,
+          "async": false,
+          "exportedName": "createProject",
+          "filename": "Dev/next-erp/src/app/actions/projects.ts"
+        }
+      },
+      "exportedName": "createProject",
+      "filename": "Dev/next-erp/src/app/actions/projects.ts"
+    },
+    "60004e3ffdbf0e34fb6eebc4dec3debf0d310e8880": {
+      "workers": {
+        "app/(dashboard)/projects/[id]/page": {
+          "moduleId": 57913,
+          "async": false,
+          "exportedName": "updateProjectStatus",
+          "filename": "Dev/next-erp/src/app/actions/projects.ts"
+        }
+      },
+      "exportedName": "updateProjectStatus",
+      "filename": "Dev/next-erp/src/app/actions/projects.ts"
+    },
+    "604a1829a3d78630634963b737b18643cbb42513f9": {
+      "workers": {
+        "app/(dashboard)/projects/[id]/page": {
+          "moduleId": 57913,
+          "async": false,
+          "exportedName": "deleteTask",
+          "filename": "Dev/next-erp/src/app/actions/projects.ts"
+        }
+      },
+      "exportedName": "deleteTask",
+      "filename": "Dev/next-erp/src/app/actions/projects.ts"
+    },
+    "70e5b223dcee5845f0b8425c4ea17ab457d7fd2d4b": {
+      "workers": {
+        "app/(dashboard)/projects/[id]/page": {
+          "moduleId": 57913,
+          "async": false,
+          "exportedName": "updateTaskStatus",
+          "filename": "Dev/next-erp/src/app/actions/projects.ts"
+        }
+      },
+      "exportedName": "updateTaskStatus",
+      "filename": "Dev/next-erp/src/app/actions/projects.ts"
+    }
+  },
+  "edge": {}
+}
