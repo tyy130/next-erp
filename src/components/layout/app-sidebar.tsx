@@ -67,20 +67,18 @@ const nav = [
   },
 ];
 
-export function AppSidebar() {
+export function AppSidebar({ orgName }: { orgName?: string | null }) {
   const pathname = usePathname();
 
   return (
     <Sidebar>
       <SidebarHeader className="border-b px-4 py-3">
         <Link href="/dashboard" className="flex items-center gap-2">
-          <Image
-            src="/logo.png"
-            alt="NextERP"
-            width={140}
-            height={36}
-            priority
-          />
+          {orgName ? (
+            <span className="text-sm font-semibold truncate">{orgName}</span>
+          ) : (
+            <Image src="/logo.png" alt="NextERP" width={140} height={36} priority />
+          )}
         </Link>
       </SidebarHeader>
 
