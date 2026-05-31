@@ -1,7 +1,27 @@
 {
   "name": "next-erp",
   "version": "0.1.0",
-  "private": true,
+  "description": "Open-source business management platform — HRM, CRM, accounting, and operations in one place",
+  "private": false,
+  "license": "MIT",
+  "author": "TacticDev",
+  "homepage": "https://github.com/tyy130/next-erp",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tyy130/next-erp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tyy130/next-erp/issues"
+  },
+  "keywords": [
+    "erp",
+    "nextjs",
+    "business",
+    "hr",
+    "crm",
+    "accounting",
+    "open-source"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -19,7 +39,7 @@
     "dotenv": "^17.4.2",
     "drizzle-kit": "^0.31.10",
     "drizzle-orm": "^0.45.2",
-    "lucide-react": "^1.17.0",
+    "lucide-react": "^1.1.0",
     "next": "16.2.6",
     "next-themes": "^0.4.6",
     "react": "19.2.4",

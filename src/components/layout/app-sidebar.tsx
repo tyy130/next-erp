@@ -49,8 +49,8 @@ const nav = [
     ],
   },
   {
-    label: "Projects",
-    items: [{ title: "All Projects", href: "/projects", icon: FolderOpen }],
+    label: "Products",
+    items: [{ title: "All Products", href: "/projects", icon: FolderOpen }],
   },
   {
     label: "Accounting",

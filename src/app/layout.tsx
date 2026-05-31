@@ -15,9 +15,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NextERP — HR, CRM & Accounting",
-  description: "Open-source ERP built on Next.js and Vercel",
-  icons: { icon: "/icon.png" },
+  title: "NextERP — Open-Source Business Management Platform",
+  description: "HRM, CRM, accounting, and operations — all in one open-source platform built on Next.js",
+  icons: {
+    icon: [
+      { url: "/icon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/icon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+  openGraph: {
+    title: "NextERP — Open-Source Business Management Platform",
+    description: "HRM, CRM, accounting, and operations — all in one platform",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
