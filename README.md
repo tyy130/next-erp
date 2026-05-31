@@ -151,6 +151,42 @@ src/
 - **Products:** projects, project_tasks
 - **System:** email_templates, email_logs, organization_settings
 
+## Desktop Application
+
+NextERP runs as a native desktop app on Windows, macOS, and Linux using [Tauri](https://tauri.app) — no browser tab needed.
+
+### Download
+Grab the latest pre-built installer from [GitHub Releases](https://github.com/tyy130/next-erp/releases).
+
+### Build from source
+
+**Prerequisites:**
+- [Node.js](https://nodejs.org) 18+
+- [Rust](https://rust-lang.org/tools/install/) (installs Cargo automatically)
+- Platform build tools:
+  - **Linux:** `sudo apt install build-essential libwebkit2gtk-4.1-dev libssl-dev libappindicator3-dev librsvg2-dev`
+  - **macOS:** `xcode-select --install`
+  - **Windows:** [Visual Studio Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/) with "Desktop development with C++" workload
+
+```bash
+git clone https://github.com/tyy130/next-erp.git
+cd next-erp
+npm install
+
+# Launch in development mode (native window with hot reload)
+npm run desktop
+
+# Build for current platform
+npm run tauri:build
+
+# Cross-compile (from any host)
+npm run desktop:build      # → Linux .deb/.AppImage
+npm run desktop:build:mac  # → macOS .dmg/.app
+npm run desktop:build:win  # → Windows .exe/.msi
+```
+
+Built apps land in `src-tauri/target/release/bundle/`.
+
 ## Roadmap
 
 - [ ] Recurring invoices

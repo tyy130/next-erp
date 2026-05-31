@@ -26,12 +26,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build",
+    "desktop": "tauri dev",
+    "desktop:build": "tauri build --target x86_64-unknown-linux-gnu",
+    "desktop:build:mac": "tauri build --target aarch64-apple-darwin",
+    "desktop:build:win": "tauri build --target x86_64-pc-windows-msvc"
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",
     "@clerk/nextjs": "^7.4.2",
     "@neondatabase/serverless": "^1.1.0",
+    "@tauri-apps/api": "^2.11.0",
+    "@tauri-apps/cli": "^2.11.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
